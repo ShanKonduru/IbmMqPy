@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MQ Status Report</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 12px;
+            border: 1px solid #ccc;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        .up {
+            color: green;
+        }
+        .down {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>MQ Status Report</h1>
+    <table>
+        <tr>
+            <th>Host</th>
+            <th>Queue Manager</th>
+            <th>Status</th>
+        </tr>
+        {% for mq in mqs %}
+        <tr>
+            <td>{{ mq.host }}</td>
+            <td>{{ mq.queue_manager }}</td>
+            <td class="{{ mq.status | lower }}">{{ mq.status }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

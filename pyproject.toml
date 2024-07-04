@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "ibmmqpy"
+version = "0.1.0"
+description = "IBM MQ monitor in python"
+authors = ["ShanKonduru <ShanKonduru@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pymqi = "^1.12.10"
+Jinja2 = "^3.1.4"
+logging = "^0.4.9.6"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
